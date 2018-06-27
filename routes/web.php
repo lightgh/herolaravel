@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/staff', 'StaffController');
+Route::resource('/level', 'LevelController');
+Route::resource('/department', 'DepartmentController');
+Route::resource('/leave', 'LeaveController');

@@ -2,7 +2,7 @@
 
 <style type="text/css">
 		body{
-			background-image: url('assets/images/humanresource.jpg');
+			background-image: url('assets2/images/humanresource.jpg');
 		}
 		h1{
 				text-align: center;

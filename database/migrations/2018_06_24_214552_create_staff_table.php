@@ -25,7 +25,7 @@ class CreateStaffTable extends Migration
             $table->date('dateobirth');
             $table->text('address1');
             $table->text('address2')->nullable();
-            $table->integer('status')->unique();
+            $table->integer('status');
             $table->timestamps();
         });
     }

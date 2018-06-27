@@ -19,6 +19,7 @@ class CreateStaffDepartmentTable extends Migration
             $table->integer('dept_id');
             $table->tinyInteger('status');
             $table->timestamps();
+            $table->unique(['staff_id', 'dept_id']);
         });
     }
 

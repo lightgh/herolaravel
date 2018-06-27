@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Able Pro Responsive Bootstrap 4 Admin Template by Phoenixcoded</title>
+	<title>HR Management System</title>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -20,29 +20,29 @@
 	<meta name="author" content="Phoenixcoded">
 
 	<!-- Favicon icon -->
-	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="assets2/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="assets2/images/favicon.ico" type="image/x-icon">
 
 	<!-- Google font-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
 	<!-- Font Awesome -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="assets2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 	<!--ico Fonts-->
-	<link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+	<link rel="stylesheet" type="text/css" href="assets2/icon/icofont/css/icofont.css">
 
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap/css/bootstrap.min.css">
 
 	<!-- Style.css -->
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets2/css/main.css">
 
 	<!-- Responsive.css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="assets2/css/responsive.css">
 
 	<!--color css-->
-	<link rel="stylesheet" type="text/css" href="assets/css/color/color-1.min.css" id="color"/>
+	<link rel="stylesheet" type="text/css" href="assets2/css/color/color-1.min.css" id="color"/>
 
 </head>
 <body>
