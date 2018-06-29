@@ -212,7 +212,7 @@
                                             <td>
                                                 <a class="btn btn-sm btn-info" href="{{ url("zone/$eachZone->id").'/edit' }}" >Edit</a>
                                                 <a class="btn btn-sm btn-default" href="{{ url("zone/$eachZone->id") }}" >View</a>
-                                                <a class="btn btn-sm btn-danger" href="{{ url("zone/$eachZone->id?action=del") }}" >Delete</a>
+                                                {{-- <a class="btn btn-sm btn-danger" href="{{ url("zone/$eachZone->id?action=del") }}" >Delete</a> --}}
                                             </td>
                                         </tr>
                                         @endforeach
