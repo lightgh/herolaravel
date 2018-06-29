@@ -83,6 +83,22 @@
                     </a>
                 </li>
                 @endif
+
+                @if($current_page == 'appointmenttype')
+                <li class="active">
+                    <a href="{{route('appointmenttype.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Appointment Type</p>
+                    </a>
+                </li>
+                @else
+                <li class="">
+                    <a href="{{route('appointmenttype.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Appointment Type</p>
+                    </a>
+                </li>
+                @endif
                 
                 @if($current_page == 'department')
                 <li class="active">
@@ -96,6 +112,54 @@
                     <a href="{{route('department.create')}}">
                         <i class="pe-7s-user"></i>
                         <p>Add/View Department</p>
+                    </a>
+                </li>
+                @endif
+
+                @if($current_page == 'rank')
+                <li class="active">
+                    <a href="{{route('rank.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Rank</p>
+                    </a>
+                </li>
+                @else
+                <li class="">
+                    <a href="{{route('rank.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Rank</p>
+                    </a>
+                </li>
+                @endif
+
+                @if($current_page == 'zone')
+                <li class="active">
+                    <a href="{{route('zone.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Zone</p>
+                    </a>
+                </li>
+                @else
+                <li class="">
+                    <a href="{{route('zone.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Zone</p>
+                    </a>
+                </li>
+                @endif
+
+                @if($current_page == 'status')
+                <li class="active">
+                    <a href="{{route('status.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Status</p>
+                    </a>
+                </li>
+                @else
+                <li class="">
+                    <a href="{{route('status.create')}}">
+                        <i class="pe-7s-user"></i>
+                        <p>Add/View Status</p>
                     </a>
                 </li>
                 @endif

@@ -22,3 +22,7 @@ Route::resource('/staff', 'StaffController');
 Route::resource('/level', 'LevelController');
 Route::resource('/department', 'DepartmentController');
 Route::resource('/leave', 'LeaveController');
+Route::resource('/rank', 'RankController');
+Route::resource('/zone', 'ZoneController');
+Route::resource('/status', 'StatusController');
+// Route::resource('/appointmenttype', 'AppointmentTypeController');

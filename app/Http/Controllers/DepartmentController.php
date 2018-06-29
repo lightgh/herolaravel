@@ -56,9 +56,13 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
+
+
         $aDepartment = Department::findOrFail($department);
+        $action = isset($_GET['action']) ? ($_GET['action'] == 'del'? 'delete' : 'show') : 'show';
+
         return view('department/addnewdepartment')->with('department', $aDepartment )
-            ->with('displaystate', 'show');
+            ->with('displaystate', $action);
 
     }
 
@@ -91,11 +95,11 @@ class DepartmentController extends Controller
 
         $thisDepartment = Department::findOrFail($department)->first();
 
-        $thisDepartment->description = $request->input('description');
         $thisDepartment->department = $request->input('department');
+        $thisDepartment->description = $request->input('description') == null? "":$request->input('description');
         $thisDepartment->save();
 
-        return redirect('department/'.$thisDepartment->first()->id)->with('status', 'Department Updated Successfully');
+        return redirect('department/'.$thisDepartment->id)->with('status', 'Department Updated Successfully');
 
     }
 
@@ -107,6 +111,7 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        //
+        $department->delete();
+        return redirect('department/create')->with('status', 'Department Deleted Successfully');
     }
 }
