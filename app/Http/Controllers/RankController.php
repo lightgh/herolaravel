@@ -36,12 +36,14 @@ class RankController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'rank' => 'required',
+            'rank' => 'required|unique:ranks',
+            'staffclass' => 'required',
             'description' => 'present'
         ]);
 
         Rank::create([
             'rank' => $request->input('rank'), 
+            'staffclass' => $request->input('staffclass'), 
             'description' => $request->input('description') == null? "":$request->input('description')
         ]);
 
@@ -87,14 +89,28 @@ class RankController extends Controller
      */
     public function update(Request $request, Rank $rank)
     {
-        $request->validate([
-            'rank' => 'required',
-            'description' => 'present'
-        ]);
-
         $thisRank = Rank::findOrFail($rank)->first();
 
+        if($thisRank->rank == $request->input('rank')){
+            $validationRule = [
+                'rank' => 'required',
+                'description' => 'present',
+                'staffclass' => 'required'
+            ];
+
+            // $thisRank->rank = $request->input('rank');
+        }else{
+            $validationRule = [
+                'rank' => 'required|unique:ranks',
+                'staffclass' => 'required',
+                'description' => 'present'
+            ];
+        }
+        
+        $request->validate($validationRule);
+
         $thisRank->rank = $request->input('rank');
+        $thisRank->staffclass = $request->input('staffclass');
         $thisRank->description = $request->input('description') == null? "":$request->input('description');
         $thisRank->save();
 

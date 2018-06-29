@@ -25,4 +25,4 @@ Route::resource('/leave', 'LeaveController');
 Route::resource('/rank', 'RankController');
 Route::resource('/zone', 'ZoneController');
 Route::resource('/status', 'StatusController');
-// Route::resource('/appointmenttype', 'AppointmentTypeController');
+Route::resource('/appointmenttype', 'AppointmenttypeController');

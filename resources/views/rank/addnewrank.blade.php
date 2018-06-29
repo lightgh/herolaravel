@@ -36,6 +36,22 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>{{ __('StaffClass') }}</label>
+                                                <select class="form-control {{ $errors->has('staffclass') ? ' is-invalid' : '' }}" name="staffclass" required >
+                                                    <option {{ old('staffclass'=="AS"? 'selected="selected"': " ", ($rank->first()->staffclass == "AS"? 'selected': "" )) }} value="AS">AS - ACADEMIC STAFF</option>
+                                                    <option {{ old('staffclass'=="NA"? 'selected="selected"': " ", ($rank->first()->staffclass == "NA"? 'selected': " ")) }}  value="NA">NA - NON-ACADEMIC STAFF</option>
+                                                </select>
+                                                @if ($errors->has('staffclass'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('staffclass') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>{{ __('Description') }}</label>
                                                 <input type="text" placeholder="{{ __('description') }}" class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description', $rank->first()->description ) }}" autofocus>
                                                 @if ($errors->has('description'))
@@ -73,6 +89,19 @@
                                             <div class="form-group">
                                                 <label>{{ __('Rank') }}</label>
                                                 <input disabled="disabled" type="text" placeholder="{{ __('Rank') }}" class="form-control {{ $errors->has('rank') ? ' is-invalid' : '' }}" name="rank" value="{{ old('rank', $rank->first()->rank) }}" required autofocus>
+                                                @if($errors->has('rank'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('rank') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>{{ __('Rank StaffClass') }}</label>
+                                                <input disabled="disabled" type="text" placeholder="{{ __('Rank') }}" class="form-control {{ $errors->has('rank') ? ' is-invalid' : '' }}" name="rank" value="{{ old('rank', $rank->first()->staffclass) }}" required autofocus>
                                                 @if($errors->has('rank'))
                                                         <span class="invalid-feedback">
                                                             <strong>{{ $errors->first('rank') }}</strong>
@@ -126,6 +155,19 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>{{ __('Rank StaffClass') }}</label>
+                                                <input readonly="readonly" type="text" placeholder="{{ __('Rank StaffClass') }}" class="form-control {{ $errors->has('staffclass') ? ' is-invalid' : '' }}" name="staffclass" value="{{ old('staffclass', $rank->first()->staffclass) }}" required autofocus>
+                                                @if ($errors->has('staffclass'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('staffclass') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>{{ __('Description') }}</label>
                                                 <input readonly="readonly" type="text" placeholder="{{ __('description') }}" class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description', $rank->first()->description ) }}" autofocus>
                                                 @if ($errors->has('description'))
@@ -168,6 +210,22 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>{{ __('StaffClass') }}</label>
+                                                <select class="form-control {{ $errors->has('staffclass') ? ' is-invalid' : '' }}" name="staffclass" required >
+                                                    <option {{ old('staffclass'=="AS"? 'selected="selected"': " ", ($rank->first()->staffclass == "AS"? 'selected': "" )) }} value="AS">AS - ACADEMIC STAFF</option>
+                                                    <option {{ old('staffclass'=="NA"? 'selected="selected"': " ", ($rank->first()->staffclass == "NA"? 'selected': " ")) }}  value="NA">NA - NON-ACADEMIC STAFF</option>
+                                                </select>
+                                                @if ($errors->has('staffclass'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('staffclass') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>{{ __('Description') }}</label>
                                                 <input type="text" placeholder="{{ __('description') }}" class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}" autofocus>
                                                 @if ($errors->has('description'))
@@ -201,6 +259,7 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>Rank</th>
+                                        <th>Staff-Class</th>
                                         <th>Description</th>
                                         <th>Action</th>
                                     </thead>
@@ -208,6 +267,7 @@
                                         @foreach($rank as $eachRank)
                                         <tr>
                                             <td>{{$eachRank->rank}}</td>
+                                            <td>{{$eachRank->staffclass}}</td>
                                             <td>{{$eachRank->description}}</td>
                                             <td style="min-width: 15em">
                                                 <a class="btn btn-sm btn-info" href="{{ url("rank/$eachRank->id").'/edit' }}" >Edit</a>
