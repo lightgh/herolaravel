@@ -14,7 +14,7 @@ class AddStaffClassToRank extends Migration
     public function up()
     {
         Schema::table('ranks', function (Blueprint $table) {
-            $table->enum('staffclass', ['NA', 'AS'] );
+            $table->string('staffclass', 2); // AS - Academic Staff NA - NonAcademic Staff
         });
     }
 

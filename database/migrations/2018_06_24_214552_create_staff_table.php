@@ -19,7 +19,7 @@ class CreateStaffTable extends Migration
             $table->string('lname');
             $table->string('oname');
             $table->string('email')->unique();
-            $table->enum('gender', ['M', 'F'] );
+            $table->string('gender', 1 ); // M or F
             $table->string('photo')->nullable();
             $table->string('staffno')->unique();
             $table->date('dateobirth');
