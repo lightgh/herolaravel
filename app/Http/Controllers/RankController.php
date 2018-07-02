@@ -91,7 +91,7 @@ class RankController extends Controller
     {
         $thisRank = Rank::findOrFail($rank)->first();
 
-        if($thisRank->rank == $request->input('rank')){
+        if(trim($thisRank->rank) == trim($request->input('rank'))){
             $validationRule = [
                 'rank' => 'required',
                 'description' => 'present',

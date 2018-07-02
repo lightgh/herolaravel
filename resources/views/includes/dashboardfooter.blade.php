@@ -54,6 +54,17 @@
                 timer: 4000
             });
 
+
+            $("#state").on('change', 
+                function () {
+                    var stateVal = $("#state").val());
+                    alert("DONE-Alert");
+                },
+                function(){
+                    alert("DONE");
+                }
+            );
+
         });
     </script>
 

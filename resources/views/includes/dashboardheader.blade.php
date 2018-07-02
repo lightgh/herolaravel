@@ -68,7 +68,7 @@
                 </li>
                 @endif
 
-                @if($current_page == 'level')
+               {{--  @if($current_page == 'level')
                 <li class="active">
                     <a href="{{route('level.create')}}">
                         <i class="pe-7s-user"></i>
@@ -82,20 +82,20 @@
                         <p>Add/View Level</p>
                     </a>
                 </li>
-                @endif
+                @endif --}}
 
                 @if($current_page == 'appointmenttype')
                 <li class="active">
                     <a href="{{route('appointmenttype.create')}}">
                         <i class="pe-7s-user"></i>
-                        <p>Add/View Appointment Type</p>
+                        <p>Add/View Appoint-Type</p>
                     </a>
                 </li>
                 @else
                 <li class="">
                     <a href="{{route('appointmenttype.create')}}">
                         <i class="pe-7s-user"></i>
-                        <p>Add/View Appointment Type</p>
+                        <p>Add/View Appoint-Type</p>
                     </a>
                 </li>
                 @endif

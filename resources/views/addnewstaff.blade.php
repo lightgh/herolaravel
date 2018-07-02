@@ -150,6 +150,65 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row"> 
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>{{ __('State') }}</label>
+                                                <select id="state" name="state" class="form-control" required="required">
+                                                    <option value="">Select State Of Origin</option>
+                                                    @foreach ($state as $eachState)
+
+                                                    <option {{old('level')==$eachState? $eachState : ''}} value="{{$eachState->id}}" >{{$eachState->state}}</option>
+
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>{{ __('Lga') }}</label>
+                                                <select name="lga" class="form-control" required="required">
+                                                    <option value="">Select Local Government</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>{{ __('Staff Class') }}</label>
+                                                <select class="form-control {{ $errors->has('firstappointdate') ? ' is-invalid' : '' }} " name="staffclass" required>
+                                                    @foreach ($department as $eachDepartment)
+                                                    
+                                                    <option {{old('staffclass')==$eachDepartment? $eachDepartment : ''}} value="{{$eachDepartment->id}}" >{{$eachDepartment->department}}</option>    
+                                                    @endforeach
+                                                </select>
+                                                
+                                                @if($errors->has('department'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('department') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>{{ __('Marital Status') }}</label>
+                                                <select class="form-control {{ $errors->has('maritalstatus') ? ' is-invalid' : '' }} " name="maritalstatus" required>
+
+                                                    <option {{old('maritalstatus')=="M"? 'selected="selected"' : ''}} value="M" >Male</option>
+                                                    <option {{old('maritalstatus') =="F"? 'selected="selected"' : ''}} value="F" >Female</option>
+                                                    
+
+                                                </select>
+                                                @if ($errors->has('maritalstatus'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('maritalstatus') }}</strong>
+                                                        </span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-md-12">

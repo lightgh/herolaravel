@@ -7,6 +7,7 @@ use App\Department;
 use App\Level;
 use App\Promotions;
 use App\StaffDepartment;
+use App\State;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
@@ -32,8 +33,9 @@ class StaffController extends Controller
     {
         $deparment = Department::all();
         $level = Level::all();
+        $state = State::all();
 
-        return view('addnewstaff', ['department'=>$deparment, 'level' => $level]);
+        return view('addnewstaff', ['department'=>$deparment, 'level' => $level, 'state' => $state ]);
     }
 
     /**
